@@ -6,13 +6,44 @@ export const ContactForm =  ({ contactMe }) => {
 	const [form, submitForm] = useState(new ContactField("", "", ""));
 
 	const handleChange = (e) => {
-		if (e.target.typ === "text") {
-			submitForm({...form, })
+		if (e.target.name === "email") {
+			submitForm({...form, [e.target.email]: e.target.value})
+		}
+
+		if (e.target.name === "message") {
+			submitForm({...form, [e.target.message]: e.target.value})
+		}
+
+		if (e.target.name === "name") {
+			submitForm({...form, [e.target.name]: e.target.value})
 		}
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		cpmtactMe(form);
+		contactMe(form);
 	};
+
+	return (
+		<form onSubmit={handleSubit}>
+			<input
+				type="text"
+				value="form.email"
+				onChange={handleChange}
+				name="email"
+			/>
+			<input
+				type="text"
+				value="form.message"
+				onChange={handleChange}
+				name="message"
+			/>
+			<input
+				type="text"
+				value="form.name"
+				onChange={handleChange}
+				name="name"
+			/>
+		</form>
+	);
 }
