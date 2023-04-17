@@ -4,12 +4,10 @@ import {ContactForm} from "./components/ContactForm";
 
 function App() {
 
-  
-
   const contact = (form) => {
 
     localStorage.setItem("contact",JSON.stringify([ form.email, form.message, form.name,])); //lägger
-    console.log(form)
+    console.log(form);
   }
 
   return (
