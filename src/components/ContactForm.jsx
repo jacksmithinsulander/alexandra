@@ -25,7 +25,7 @@ export const ContactForm =  ({ contactMe }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubit}>
+		<form onSubmit={handleSubmit}>
 			<input
 				type="text"
 				value="form.email"
