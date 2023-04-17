@@ -1,11 +1,15 @@
 import './App.css';
+
 import {ContactForm} from "./components/ContactForm";
 
 function App() {
 
-  const contact = (form) => {
-    
+  
 
+  const contact = (form) => {
+
+    localStorage.setItem("contact",JSON.stringify([ form.email, form.message, form.name,])); //lägger
+    console.log(form)
   }
 
   return (
@@ -13,6 +17,7 @@ function App() {
       <h1>Alexandra</h1>
       <h2>Kontakta mig!</h2>
       <ContactForm contactMe={contact}/>
+
     </section>
   );
 }
