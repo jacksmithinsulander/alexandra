@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { ContactField } from "./../models/ContactField";
+import Photo from "../Crazy_Cat_Lady.png"
 
 export const ContactForm =  ({ contactMe }) => {
 
 	const [form, submitForm] = useState(new ContactField("", "", ""));
+	const [showImage, setShowImage] = useState(false);
+	const [showText, setShowText] = useState(false);
 
 	const handleChange = (e) => {
 		
@@ -14,6 +17,11 @@ export const ContactForm =  ({ contactMe }) => {
 		e.preventDefault();
 		contactMe(form);
 	};
+
+	const handleButtonClick = () => {
+		setShowImage(true);
+		setShowText(true);
+	}
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -35,7 +43,9 @@ export const ContactForm =  ({ contactMe }) => {
 				onChange={handleChange}
 				name="name"
 			/>
-			<button>Kontakta mig!</button>
+			<button onClick={handleButtonClick}>Kontakta mig!</button>
+			{showImage && <img src={Photo} alt="crazycatlady" />}
+			{showText && <h1>Crazy cat lady loves u</h1>}
 		</form>
 	);
 }
