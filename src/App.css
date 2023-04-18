@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: url(./../pony.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+h1, h2 {
+  color: rgb(255, 149, 237);
+}
+input {
+  border: 5px solid rgb(227, 111, 243);
+  color: rgb(0, 151, 174);
+  width: 100px;
+  height: 25px;
+}
+
+/* .logo {
+  background-image: url(./../cat.png);
+  height: 50vh;
+  width: 25vh;
+} */
+
