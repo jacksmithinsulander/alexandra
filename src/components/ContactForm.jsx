@@ -18,23 +18,28 @@ export const ContactForm =  ({ contactMe }) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<input
+				placeholder="Full name"
 				type="text"
 				value={form.email}
 				onChange={handleChange}
 				name="email"
 			/>
-			<input
+			<div className="form2">
+			<input className="email"
+				placeholder="Email"
 				type="text"
 				value={form.message}
 				onChange={handleChange}
 				name="message"
 			/>
-			<input
+			<input className="phone"
+			placeholder="iPhone"
 				type="text"
 				value={form.name}
 				onChange={handleChange}
 				name="name"
 			/>
+			</div>
 			<button>Kontakta mig!</button>
 		</form>
 	);
